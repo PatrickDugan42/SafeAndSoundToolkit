@@ -13,6 +13,7 @@ import android.widget.ImageView;
  */
 public class ImageAdapter extends BaseAdapter {
 
+    //changes
     Context context;
     ToolkitItem[] toolkitItems;
     int width;
