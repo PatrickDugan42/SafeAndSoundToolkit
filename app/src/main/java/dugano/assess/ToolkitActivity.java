@@ -1,5 +1,6 @@
 package dugano.assess;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -11,7 +12,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 
-public class ToolkitActivity extends ActionBarActivity {
+public class ToolkitActivity extends Activity {
 
     int[] assessIds = {
             R.drawable.assess_toolkitgraphics_01, R.drawable.assess_toolkitgraphics_02,
