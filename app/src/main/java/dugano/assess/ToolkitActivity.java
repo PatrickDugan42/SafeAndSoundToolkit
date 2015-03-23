@@ -1,6 +1,7 @@
 package dugano.assess;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -36,6 +37,8 @@ public class ToolkitActivity extends Activity {
             R.drawable.audit7
     };
 
+    ToolkitItem[] assesItems;
+
 
 
 
@@ -50,16 +53,25 @@ public class ToolkitActivity extends Activity {
 
         //choose which array to use
 
-        final ToolkitItem[] assesItems = new ToolkitItem[10];
-        for (int i = 0; i < assessIds.length; i++){
-            assesItems[i] = new ToolkitItem();
-            assesItems[i].imageViewId = assessIds[i];
-        }
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gird_view);
 
+        Intent intent = getIntent();
+        int displayKit = intent.getIntExtra("position", 0);
+
         GridView gridView = (GridView) findViewById(R.id.grid_view);
+
+
+       switch (displayKit){
+           case 0: setAssesArr();
+               break;
+           case 1: setActArr();
+               break;
+           case 2: setAuditArr();
+               break;
+       }
 
         gridView.setAdapter(new ImageAdapter(this, assesItems,width, height));
 
@@ -91,5 +103,29 @@ public class ToolkitActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    void setAssesArr(){
+        assesItems = new ToolkitItem[assessIds.length];
+        for (int i = 0; i < assessIds.length; i++){
+            assesItems[i] = new ToolkitItem();
+            assesItems[i].imageViewId = assessIds[i];
+        }
+    }
+
+    void setActArr(){
+        assesItems = new ToolkitItem[actIds.length];
+        for (int i = 0; i < actIds.length; i++){
+            assesItems[i] = new ToolkitItem();
+            assesItems[i].imageViewId = actIds[i];
+        }
+    }
+
+    void setAuditArr(){
+        assesItems = new ToolkitItem[auditIds.length];
+        for (int i = 0; i < auditIds.length; i++){
+            assesItems[i] = new ToolkitItem();
+            assesItems[i].imageViewId = auditIds[i];
+        }
     }
 }
