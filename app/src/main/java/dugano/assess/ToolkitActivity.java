@@ -65,6 +65,8 @@ public class ToolkitActivity extends Activity {
 
 
         //test the fetch
+
+        //wtf
        switch (displayKit){
            case 0: setAssesArr();
                break;
