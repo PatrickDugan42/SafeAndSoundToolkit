@@ -64,6 +64,7 @@ public class ToolkitActivity extends Activity {
         GridView gridView = (GridView) findViewById(R.id.grid_view);
 
 
+        //test the fetch
        switch (displayKit){
            case 0: setAssesArr();
                break;
